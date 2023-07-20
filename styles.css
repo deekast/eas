@@ -1,0 +1,16 @@
+.box {
+    border: 1px solid red;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+  
+  #container {
+    width: 1500000px;
+    height: 1500000px;
+  }
+  
+  #container>div {
+    height: 25px;
+  }
