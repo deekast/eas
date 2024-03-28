@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "username": "deekast",
+        "firstName": "Dani",
+        "lastName": "Castanheira",
+        "email": "deekast@hotmail.com"
+      },
+      {
+        "username": "clarita22",
+        "firstName": "Clara",
+        "lastName": "Lee",
+        "email": "clara.lee@gmail.com"
+      },
+      {
+        "username": "bcast",
+        "firstName": "brian",
+        "lastName": "cast",
+        "email": "brian.smith@aol.com"
+      },
+      {
+        "username": "BigFern",
+        "firstName": "Fernando",
+        "lastName": "Vega",
+        "email": "fernando.vega@interpol.eu"
+      }
+    ]
+  }
+  
