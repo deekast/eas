@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const gridContainer = document.getElementById('gridContainer');
-    const userList = document.getElementById('userList');
+  //constants for the index.js "global"
+  const gridContainer = document.getElementById('gridContainer');
+  const userList = document.getElementById('userList');
 
+//Creates the etch a sketch and its mouseover functionality 
     function createBoxes() {
-        let numBox = prompt('how many boxes do you want', 100);
+       container.innerHTML = ''; 
+        let numBox = prompt('how big of a grid??', 21);
         for (let i = 0; i < numBox; i++) {
           const row = container.appendChild(document.createElement('div'));
           for (let j = 0; j < numBox; j++) {
             const square = document.createElement('div');
             square.className = 'box';
             square.addEventListener("mouseover", function(){
-              this.style.backgroundColor = "black";
+              this.style.backgroundColor = "pink";
             });
             row.appendChild(square);
           }
@@ -18,18 +21,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       
 
-
+//Fetch the promise from json and then call the displayUsers function 
     function fetchUsers() {
         fetch('http://localhost:3000/users')
         .then(response => response.json())
-       .then(displayUsers)
+        .then(displayUsers)
     }
     
   
 // Function to display users called by the fetchUsers function 
 function displayUsers(users) {
     const userList = document.getElementById('userList');
-    userList.innerHTML = ''; // clear previous user list so list doesnt keep repeating  if you click button more than one time
+    userList.innerHTML = '';   // clear previous user list so list doesnt keep repeating  if you click button more than one time
     users.forEach(user => {
         const userItem = document.createElement('li');
         const userDetails = `${user.username} : ${user.firstName} ${user.lastName} - ${user.email}`;
@@ -43,9 +46,7 @@ function displayUsers(users) {
 
   //button event listeners 
 
-    document.getElementById('refreshButton').addEventListener('click', createBoxes)
-  
-
+    document.getElementById('refreshButton').addEventListener('click', createBoxes);
     document.getElementById('usersButton').addEventListener('click', fetchUsers);
   });
   
